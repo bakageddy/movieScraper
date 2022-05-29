@@ -20,7 +20,8 @@ class Plot:
             self.id = await self.get_id(session)
             if self.id is None:
                 return None
-            self.plot_url = f'{keys.BASE_URL}/Wikipedia/{keys.WORKING_KEY}/{self.id}'
-            async with session.get(self.plot_url) as request:
-                content = await request.json()
-                return content["plotFull"]["plainText"]
+            else:
+                self.plot_url = f'{keys.BASE_URL}/Wikipedia/{keys.WORKING_KEY}/{self.id}'
+                async with session.get(self.plot_url) as request:
+                    content = await request.json()
+                    return content["plotFull"]["plainText"]
