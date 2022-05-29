@@ -2,7 +2,6 @@ import asyncio
 import sys
 import pyTextColor as color
 import os.path as path
-import subprocess
 
 from lib import Plot
 
